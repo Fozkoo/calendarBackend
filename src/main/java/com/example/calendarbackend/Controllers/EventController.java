@@ -11,24 +11,30 @@ import org.springframework.web.bind.annotation.*;
 
 public class EventController {
 
-    @Autowired
+    /*@Autowired
  //   private EventService eventService;
 
     @CrossOrigin
     @GetMapping("/")                                //OBTIENE TODOS LOS EVENTOS
-    public ResponseEntity<?> getAllEvents() {}
+    public ResponseEntity<?> getAllEvents() {}*/
 
     @CrossOrigin
     @GetMapping("/{idevent}")                       //OBTIENE EL EVENTO CON EL ID idevent
-    public ResponseEntity<?> getEventById(){}
+    public ResponseEntity<?> getEventById(){
+        return null;
+    }
 
     @CrossOrigin
     @PostMapping("/")                               //CREA UN EVENTO
-    public ResponseEntity<?> createEvent(@RequestBody Event event) {}
+    public ResponseEntity<?> createEvent(@RequestBody Event event) {
+        return null;
+    }
 
 
     @CrossOrigin
     @DeleteMapping("/{idevent}")                    //ELIMINA EL EVENTO CON EL ID idevent
-    public ResponseEntity<?> deleteEvent(){}
+    public ResponseEntity<?> deleteEvent(){
+        return null;
+    }
 
 }

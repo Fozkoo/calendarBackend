@@ -28,7 +28,7 @@ public class AttachmentsHasEvent {
 
     public AttachmentsHasEventId getId() {
         return id;
-    }
+}
 
     public void setId(AttachmentsHasEventId id) {
         this.id = id;
