@@ -1,6 +1,7 @@
 package com.example.calendarbackend.Controllers;
 
 import com.example.calendarbackend.Models.Event;
+import com.example.calendarbackend.Repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/events")                      //ENDPOINT RAIZ
 
 public class EventController {
+    @Autowired
+    private EventRepository eventRepository;
+    @GetMapping("/getAllEventRepository")
+    public ResponseEntity<?> getAllEventRepository() {
+        return ResponseEntity.ok(eventRepository.findAll());
+    }
 
     /*@Autowired
  //   private EventService eventService;
