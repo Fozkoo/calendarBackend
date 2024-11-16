@@ -14,7 +14,7 @@ public class Attachment {
     @Column(name = "idattachments", nullable = false)
     private Integer id;
 
-    @Column(name = "url", nullable = false, length = 45)
-    private String url;
+    @Column(name = "url", nullable = false)
+    private byte[] url;
 
 }

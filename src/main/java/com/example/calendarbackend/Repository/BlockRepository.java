@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface BlockRepository extends JpaRepository<Block, Integer> {
+public interface BlockRepository extends JpaRepository<Block, Integer> {    
 
     @Query(value = "SELECT " +
             "m.mes AS month_name, " + // Nombre del mes

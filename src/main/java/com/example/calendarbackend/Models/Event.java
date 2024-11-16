@@ -22,4 +22,10 @@ public class Event {
     @Column(name = "time")
     private LocalTime time;
 
+    @Column(name = "userid", nullable = false, length = 45)
+    private String userId;
+
+    @Column(name = "sendmail", nullable = false, length = 45)
+    private String sendMail;
+
 }
