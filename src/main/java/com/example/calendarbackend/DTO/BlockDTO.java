@@ -4,29 +4,25 @@ package com.example.calendarbackend.DTO;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.sql.Time;
+import java.util.List;
 
 @Getter
 @Setter
 public class BlockDTO {
 
+    private Integer blockId;
     private String monthName;
     private String dayValue;
     private Integer numberValue;
     private Integer yearValue;
-    private String eventTitle;
-    private Time eventDatetime;
-    private String attachmentUrl;
+    private List<EventDTO> events;
 
-    public BlockDTO (String monthName, String dayValue, Integer numberValue, Integer yearValue,
-                         String eventTitle, Time eventDatetime, String attachmentUrl) {
+    public BlockDTO (Integer blockId, String monthName, String dayValue, Integer numberValue, Integer yearValue, List<EventDTO> events) {
         this.monthName = monthName;
         this.dayValue = dayValue;
         this.numberValue = numberValue;
         this.yearValue = yearValue;
-        this.eventTitle = eventTitle;
-        this.eventDatetime = eventDatetime;
-        this.attachmentUrl = attachmentUrl;
+        this.events = events;
     }
 
 
@@ -62,27 +58,13 @@ public class BlockDTO {
         this.yearValue = yearValue;
     }
 
-    public String getEventTitle() {
-        return eventTitle;
+    public List<EventDTO> getEvent() {
+        return events;
     }
 
-    public void setEventTitle(String eventTitle) {
-        this.eventTitle = eventTitle;
+    public void setEvent(List<EventDTO> event) {
+        this.events = event;
     }
 
-    public Time getEventDatetime() {
-        return eventDatetime;
-    }
 
-    public void setEventDatetime(Time eventDatetime) {
-        this.eventDatetime = eventDatetime;
-    }
-
-    public String getAttachmentUrl() {
-        return attachmentUrl;
-    }
-
-    public void setAttachmentUrl(String attachmentUrl) {
-        this.attachmentUrl = attachmentUrl;
-    }
 }

@@ -5,6 +5,7 @@ import com.example.calendarbackend.Models.Block;
 import com.example.calendarbackend.Repository.BlockRepository;
 
 import com.example.calendarbackend.Services.BlockService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,23 +22,37 @@ public class BlockController {
     @Autowired
     private BlockService blockService;
 
-    /*Este endpoint me trae todos los bloques solo filtrando por el id del anio */
+
+
+    @CrossOrigin
+    @GetMapping("/getAllBlocks/{idMonth}/{idYear}")
+    public ResponseEntity<List<BlockDTO>> getAllBlocks(@PathVariable int idMonth, @PathVariable int idYear) {
+        List<BlockDTO> blocks = blockService.getBlocks(idMonth, idYear);
+        return ResponseEntity.ok(blocks);
+    }
+
+    /*Este endpoint me trae todos los bloques solo filtrando por el id del anio
     @CrossOrigin
     @GetMapping("/getAllBlocksWithInfo")
     public ResponseEntity<?> getAllBlocksWithInfo(){
         List<BlockDTO> blocks = blockService.getAllBlocks();
         return ResponseEntity.ok(blocks);
     }
-
+    */
 
     /*Este endpoint me trae todos los bloques pasandole por parametro el id del mes*/
 
+    /*
     @CrossOrigin
     @GetMapping("/getAllBlocksByMonthId/{idMonth}")
     public ResponseEntity<?> getAllBlocksByMonthId(@PathVariable int idMonth){
         List<BlockDTO> blocks = blockService.getAllBlocksByMonthId(idMonth);
         return ResponseEntity.ok(blocks);
     }
+
+     */
+
+
 
 
 
